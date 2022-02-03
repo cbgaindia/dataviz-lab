@@ -13,7 +13,7 @@ no.,Type,Category,Sub-category,Particular,color_group,label_display,label_pos,No
 11,Receipts,Revenue Receipts,Non-Tax Revenue,Total Non-Tax Revenue,2,1,"bottom,right",...,243028,269651
 12,Receipts,Revenue Receipts,Non-Tax Revenue,Interest receipts,2,0,,...,11541,18000
 13,Receipts,Revenue Receipts,Non-Tax Revenue,Dividends and Profits,2,0,,...,103538,113948
-14,Receipts,Revenue Receipts,Non-Tax Revenue,External Grants,2,0,,,747,620
+14,Receipts,Revenue Receipts,Non-Tax Revenue,External Grants,2,0,,...,747,620
 15,Receipts,Revenue Receipts,Non-Tax Revenue,Other Non Tax Revenue,2,0,,...,124671,134276
 16,Receipts,Revenue Receipts,Non-Tax Revenue,Receipts of Union Territories,2,0,,...,2531,2807
 17,Receipts,Capital Receipts,,Total Capital Receipts,3,1,bottom,...,1623428,1739735
@@ -21,7 +21,7 @@ no.,Type,Category,Sub-category,Particular,color_group,label_display,label_pos,No
 19,Receipts,Capital Receipts,Non-debt Receipts,Recoveries of loans and advances,3,0,,"Excludes recoveries of short-term loans and advances from States, loans to Government servants, etc.",13000,14291
 20,Receipts,Capital Receipts,Non-debt Receipts,Disinvestment Receipts,3,0,,...,175000,65000
 21,Receipts,Capital Receipts,Debt Receipts,Total Debt Receipts,4,1,"top,right",The receipts are net of payment,1435428,1660444
-22,Receipts,Capital Receipts,Debt Receipts,Borrowings,4,1,,,967708,1158719
+22,Receipts,Capital Receipts,Debt Receipts,Borrowings,4,1,,...,967708,1158719
 23,Receipts,Capital Receipts,Debt Receipts,External Debt,4,1,,...,1514,19251
 24,Receipts,Capital Receipts,Debt Receipts,Securities issued against Small Savings,4,0,,...,391927,425449
 25,Receipts,Capital Receipts,Debt Receipts,State Provident Fund (Net),4,0,,...,20000,20000
