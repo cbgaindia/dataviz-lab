@@ -27,6 +27,10 @@
         {
             "name" : "Budget Profile - Union Budget",
             "link" : "./visualisations/union-budget-explorer(2020)/budget-profile/index.html"
+        },
+        {
+            "name" : "Budget Profile - Union Budget(2021)",
+            "link" : "./visualisations/union-budget-explorer(2021)/budget-profile/index.html"
         }],
         "developers" : [
             {
@@ -76,8 +80,16 @@
             "link" : "./visualisations/union-budget-explorer(2020)/Expenditure-bubble/index.html"
     },
     {
+        "name" : "Expenditure Budget of Ministries and Departments(2021-22)",
+            "link" : "./visualisations/union-budget-explorer(2021)/Expenditure-bubble/index.html"
+    },
+    {
         "name" : "Major Schemes(2020-21)",
             "link" : "./visualisations/union-budget-explorer(2020)/Schemes/index.html"
+    },
+    {
+        "name" : "Major Schemes(2021-22)",
+            "link" : "./visualisations/union-budget-explorer(2021)/Schemes/index.html"
     }],
         "developers" : [
             {
@@ -103,6 +115,9 @@
         },
         {   "name" : "Budget Summary(2020-2021)",
             "link" : "./visualisations/union-budget-explorer(2020)/3-balance-column/index.html"
+        },
+        {   "name" : "Budget Summary(2021-2022)",
+            "link" : "./visualisations/union-budget-explorer(2021)/3-balance-column/index.html"
         }],
         "developers" : [
             {
