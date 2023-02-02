@@ -306,7 +306,7 @@
                         <div class="text-overlays">
                             <div class="text-overlay-grp">
                                 <div class="text-content-title">Outlay on Major Schemes </div>
-                                <div class="text-content-description"> Scheme expenditure forms a sizeable proportion of the total expenditure of the Central Government and is segregated into two categories, the Centrally Sponsored Schemes (CSS) and the Central Sector Schemes. We have considered 130 schemes in total in this section comprising the Core of the Core and the Core Schemes which makes up the Centrally Sponsored Schemes and the major Central Sector Schemes. </div>
+                                <div class="text-content-description"> Scheme expenditure forms a sizeable proportion of the total expenditure of the Central Government and is segregated into two categories, the Centrally Sponsored Schemes (CSS) and the Central Sector Schemes.We have considered 185 schemes in total in this section comprising the Core of the Core Schemes, Core Schemes, and Major Central Sector Schemes. </div>
                             </div>
                             <div class="text-overlay-dist">
                                 <div class="text-content overlay-1">
@@ -422,7 +422,7 @@
             //var grand_total = data.pop()
             var max_amount = d3.max(data, function(d) { return parseInt(d[selected_year], 10); });
 
-            radius_scale = d3.scale.pow().exponent(0.5).domain([0, max_amount]).range([2, 36]);
+            radius_scale = d3.scale.pow().exponent(0.5).domain([0, max_amount]).range([2, 28]);
 
 
 
