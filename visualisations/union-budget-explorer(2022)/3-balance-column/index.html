@@ -216,12 +216,12 @@
                     </div>
                     <div class="col-sm-4 col-md-4 section-col2">
                         <div class="white-box">
-                            <h2>Union Budget 2019</h2>
+                            <h2>Union Budget 2022</h2>
                             <hr class="hr-style-1" />
-                            <p class="obi-aim">At Open Budgets India it is our endeavour to make India's Budgets open, usable and easy to comprehend. Explore Expenditure Budget, Receipts Budget, Budget at a Glance and other key datasets related to Union Budget 2019-20 at:
+                            <p class="obi-aim">At Open Budgets India it is our endeavour to make India's Budgets open, usable and easy to comprehend. Explore Expenditure Budget, Receipts Budget, Budget at a Glance and other key datasets related to Union Budget 2022-23 at:
                                 <a href="https://openbudgetsindia.org/" target="_blank"><img class="obi-logo" src="https://raw.githubusercontent.com/cbgaindia/design/master/logo_OBI/logo_types/light_bg_logo/draft_final/logo_with_text/draft_final.png" /></a> </p>
                             <div class="btn-group" role="group" aria-label="...">
-                                <a href="https://openbudgetsindia.org/dataset?tags=union+budget+2019+2020" target="_blank">
+                                <a href="https://openbudgetsindia.org/dataset?tags=budget2022" target="_blank">
                                     <button type="button" class="btn explore-obi">Explore Union Budget Data</button>
                                 </a>
                             </div>
@@ -262,8 +262,8 @@
     d3.csv("data.csv", function(data) {
 
 
-        var current_year = "Budget Estimates 2019-2020"
-        var previous_year = "Budget Estimates 2018-2019"
+        var current_year = "Budget Estimates 2022-2023"
+        var previous_year = "Budget Estimates 2021-2022"
 
         var receipt_fig = data.find(function(d) {
             return d["Particular"] == "Total Receipts"

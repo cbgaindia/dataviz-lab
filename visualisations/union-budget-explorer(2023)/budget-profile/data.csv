@@ -1,0 +1,38 @@
+no.,Type,Category,Sub-category,Particular,color_group,label_display,label_pos,Notes,Budget Estimates 2021-2022,Budget Estimates 2022-2023,Budget Estimates 2023-24
+0,Receipts,...,...,Total Receipts,1,1,bottom,...,3483236,3944909,4503097
+1,Receipts,Revenue Receipts,...,Total Revenue Receipts,1,1,"bottom,right",...,1788424,2204422,2632281
+2,Receipts,Revenue Receipts,Centre's Net Tax Revenue,Centre's Net Tax Revenue,1,1,"bottom,right",...,1545397,1934771,2330631
+3,Receipts,Revenue Receipts,Centre's Net Tax Revenue,Corporation Tax,1,1,,...,547000,720000,922675
+4,Receipts,Revenue Receipts,Centre's Net Tax Revenue,Taxes on Income,1,1,,...,561000,700000,900575
+5,Receipts,Revenue Receipts,Centre's Net Tax Revenue,Customs,1,1,"top,right",...,136000,213000,233100
+6,Receipts,Revenue Receipts,Centre's Net Tax Revenue,Union Excise Duties,1,1,"top,left",...,335000,335000,339000
+7,Receipts,Revenue Receipts,Centre's Net Tax Revenue,Goods and Services Tax (GST),1,1,right,Includes GST compensation cess,630000,780000,956600
+8,Receipts,Revenue Receipts,Centre's Net Tax Revenue,Taxes of Union Territories,1,0,,...,7059,7820,8408
+9,Receipts,Revenue Receipts,Centre's Net Tax Revenue,Less - NCCD transferred to NCCF/NDRF,1,0,,...,6100,6400,8780
+10,Receipts,Revenue Receipts,Centre's Net Tax Revenue,Less - State's share,1,1,"top,right",...,665563,816649,1021448
+11,Receipts,Revenue Receipts,Non-Tax Revenue,Total Non-Tax Revenue,2,1,"bottom,right",...,243028,269651,301650
+12,Receipts,Revenue Receipts,Non-Tax Revenue,Interest receipts,2,0,,...,11541,18000,24820
+13,Receipts,Revenue Receipts,Non-Tax Revenue,Dividends and Profits,2,0,,...,103538,113948,91000
+14,Receipts,Revenue Receipts,Non-Tax Revenue,External Grants,2,0,,...,747,620,2135
+15,Receipts,Revenue Receipts,Non-Tax Revenue,Other Non Tax Revenue,2,0,,...,124671,134276,181382
+16,Receipts,Revenue Receipts,Non-Tax Revenue,Receipts of Union Territories,2,0,,...,2531,2807,2313
+17,Receipts,Capital Receipts,,Total Capital Receipts,3,1,bottom,...,1623428,1739735,1882603
+18,Receipts,Capital Receipts,Non-debt Receipts,Total Non-debt Receipts,3,0,,...,188000,79291,84000
+19,Receipts,Capital Receipts,Non-debt Receipts,Recoveries of loans and advances,3,0,,"Excludes recoveries of short-term loans and advances from States, loans to Government servants, etc.",13000,14291,23000
+20,Receipts,Capital Receipts,Non-debt Receipts,Disinvestment Receipts,3,0,,...,175000,65000,61000
+21,Receipts,Capital Receipts,Debt Receipts,Total Debt Receipts,4,1,"top,right",The receipts are net of payment,1435428,1660444,1798604
+22,Receipts,Capital Receipts,Debt Receipts,Borrowings,4,1,,,967708,1158719,1230911
+23,Receipts,Capital Receipts,Debt Receipts,External Debt,4,0,,...,1514,19251,22118
+24,Receipts,Capital Receipts,Debt Receipts,Securities issued against Small Savings,4,0,,...,391927,425449,471317
+25,Receipts,Capital Receipts,Debt Receipts,State Provident Fund (Net),4,0,,...,20000,20000,20000
+26,Receipts,Capital Receipts,Debt Receipts,Other Receipts (Internal Debts and Public Account),4,0,,"Includes receipts from reserve funds, deposits and advances, etc.",54280,37025,54258
+27,Receipts,Draw-Down of Cash Balance,Draw-Down of Cash Balance,Total Draw-Down of Cash Balance,4,0,,...,71383,752,-11787
+28,Expenditure,Total Budgetary Expenditure,...,Total Budgetary Expenditure,6,1,,...,3483236,3944909,4503097
+29,Expenditure,Total Budgetary Expenditure,Central Expenditure,Total Central Expenditure,6,1,,...,2672604,3006112,3513761
+30,Expenditure,Total Budgetary Expenditure,Central Expenditure,Establishment,6,1,,...,609014,692214,744339
+31,Expenditure,Total Budgetary Expenditure,Central Expenditure,Central Sector Schemes,6,1,,...,1051703,1181085,1467880
+32,Expenditure,Total Budgetary Expenditure,Central Expenditure,Other Central Expenditure,6,1,top,Includes Interest Payments,1011887,1132813,1301542
+33,Expenditure,Total Budgetary Expenditure,Transfers,Transfers,7,1,,...,810632,938797,989337
+34,Expenditure,Total Budgetary Expenditure,Transfers,Centrally Sponsored Schemes,7,1,bottom,...,381305,442781,476105
+35,Expenditure,Total Budgetary Expenditure,Transfers,Finance Commission Transfers,7,0,,...,220843,192108,165480
+36,Expenditure,Total Budgetary Expenditure,Transfers,Other Transfers,7,1,top,...,208484,303908,347752

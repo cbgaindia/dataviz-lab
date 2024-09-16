@@ -1,0 +1,37 @@
+source,source_name,target,destination_name,value,type
+0,Total Receipts,1,Total Revenue Receipts,5,reverse
+0,Total Receipts,16,Total Capital Receipts,5,reverse
+0,Total Receipts,27,Draw-Down of Cash Balance,1,
+1,Total Revenue Receipts,2,Centre's Net Tax Revenue,3,reverse
+1,Total Revenue Receipts,11,Total Non-Tax Revenue,3,reverse
+2,Centre's Net Tax Revenue,3,Corporation Tax,1,reverse
+2,Centre's Net Tax Revenue,4,Taxes on Income,1,reverse
+2,Centre's Net Tax Revenue,5,Customs,1,reverse
+2,Centre's Net Tax Revenue,6,Union Excise Duties,1,reverse
+2,Centre's Net Tax Revenue,7,Goods and Services Tax (GST),1,reverse
+2,Centre's Net Tax Revenue,8,Taxes of Union Territories,1,reverse
+2,Centre's Net Tax Revenue,9,Less - NCCD transferred to NCCF/NDRF,1,straight
+2,Centre's Net Tax Revenue,10,Less - State's share,1,straight
+11,Total Non-Tax Revenue,12,Interest receipts,1,reverse
+11,Total Non-Tax Revenue,13,Dividends and Profits,1,reverse
+11,Total Non-Tax Revenue,14,Other Non Tax Revenue,1,reverse
+11,Total Non-Tax Revenue,15,Receipts of Union Territories,1,reverse
+16,Total Capital Receipts,17,Non-debt Receipts,3,reverse
+16,Total Capital Receipts,20,Debt Receipts,3,reverse
+17,Non-debt Receipts,18,Recoveries of loans and advances,1,reverse
+17,Non-debt Receipts,19,Miscellaneous Capital Receipts,1,reverse
+20,Debt Receipts,21,Market Loans (Gross),1,reverse
+20,Debt Receipts,22,Short term/T-Bill Borrowings,1,reverse
+20,Debt Receipts,23,External Loan (Net),1,
+20,Debt Receipts,24,Securities issued against Small Savings,1,reverse
+20,Debt Receipts,25,State Provident Fund (Net),1,reverse
+20,Debt Receipts,26,Other Receipts (Net),1,reverse
+0,Total Receipts,28,Total Budgetary Expenditure,8,
+28,Total Budgetary Expenditure,29,Central Expenditure ,5,
+28,Total Budgetary Expenditure,33,Transfers,5,
+29,Central Expenditure ,30,Establishment,1,
+29,Central Expenditure ,31,Central Sector Schemes,1,
+29,Central Expenditure ,32,Other Central Expenditure,1,
+33,Transfers,34,Centrally Sponsored Schemes,1,
+33,Transfers,35,Finance Commission Transfers,1,
+33,Transfers,36,Other Transfers,1,

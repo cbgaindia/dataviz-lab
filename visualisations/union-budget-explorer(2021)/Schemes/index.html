@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <style type="text/css">
+    body {
+        font-family: Open Sans, sans-serif;
+    }
+
+    #vis {
+        width: 840px;
+        clear: both;
+        
+        margin: 0px auto;
+    }
+
+    svg {
+
+        margin: 0px auto;
+    }
+
+    #vis-svg-container {
+        position: absolute;
+        top: 0;
+    }
+
+    .tooltip {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        /* background: #222222; */
+        background: #fff;
+        opacity: 1;
+        /* color: #eeeeee; */
+        color: black;
+        padding: 10px;
+        text-align: center;
+        width: 400px;
+        font-size: 14px;
+        z-index: 10;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.19), 0 1px 3px rgba(0, 0, 0, 0.23);
+    }
+
+    .tooltip .dept-name {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .tooltip .name {
+        font-weight: bold;
+    }
+
+    .tooltip-hr {
+        margin: 5px 0px;
+        border-top: 1px solid rgba(128, 128, 128, 0.64);
+    }
+
+    .tooltip-hr-sec {
+        border-top: 1px solid rgba(128, 128, 128, 0.54);
+    }
+
+    .tooltipcurrent-year {
+        margin-right: 10px;
+        font-weight: 600;
+        font-size: 17px;
+    }
+
+    #tooltip-percent {
+        font-weight: 600;
+        font-size: 17px;
+    }
+
+    .tooltip .positive {
+        color: green;
+    }
+
+    .tooltip .negative {
+        color: red;
+    }
+
+    .tooltip .na {
+        color: grey;
+    }
+
+    .text-content {
+        position: absolute;
+        width: 200px;
+    }
+
+    .overlay-1 {
+
+        margin-left: 630px;
+        margin-top: 70px;
+    }
+
+
+
+    .text-content-description {
+        font-size: 13px;
+        font-weight: 100;
+    }
+
+    .text-content-title {
+        font-weight: 700;
+    }
+
+    .text-content.overlay-2 {
+        margin-top: 100px;
+        margin-left: 30px;
+    }
+
+    .text-content.overlay-3 {
+        margin-top: 350px;
+        margin-left: 600px;
+    }
+
+    .text-overlay-grp {
+        position: absolute;
+        width: 300px;
+        margin-left: 30px;
+        margin-top: 60px;
+    }
+
+    .text-overlay-grp .text-content-title {
+        font-size: 20px;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+
+    .text-overlay-grp .text-content-description {
+        font-size: 15px;
+        text-align: left;
+    }
+
+    #obi-colorKey {
+        text-align: center;
+        top: 210px;
+        left: 10px;
+        padding: 20px;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    #obi-colorKey ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    #obi-colorKey p {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    #obi-colorKey li {
+        background-image: none;
+        padding: 0;
+        margin: 0;
+        float: left;
+        display: block;
+        height: 100%;
+    }
+
+
+
+    .change-decrease3 {
+        background-color: #d73027;
+    }
+
+    .change-decrease2 {
+        background-color: #f46d43;
+    }
+
+    .change-decrease1 {
+        background-color: #fdae61;
+    }
+
+    .change-same {
+        background-color: #CCC;
+    }
+
+    .change-increase1 {
+        background-color: #abd9e9;
+    }
+
+    .change-increase2 {
+        background-color: #74add1;
+    }
+
+    .change-increase3 {
+        background-color: #4575b4;
+    }
+
+    .obi-colorSwatches {
+        width: 100%;
+        height: 10px;
+    }
+
+    .obi-colorSwatches li {
+        width: 16%;
+        border-right: solid white 1px;
+    }
+
+    .obi-colorTicks {
+        height: 6px;
+    }
+
+    .obi-colorTicks li {
+        width: 16%;
+        border-right: solid #CCC 1px;
+    }
+
+    .obi-colorLabels {
+        margin-top: 3px;
+        height: 20px;
+        position: relative;
+        left: 8%;
+    }
+
+    .obi-colorLabels li {
+        width: 16%;
+        text-align: center;
+        font-size: 10px;
+        line-height: 1em;
+        padding: 4px 0 0 0!important;
+        margin: 0;
+    }
+
+    .text-overlay-key {
+        width: 300px;
+        position: absolute;
+        margin-top: 350px;
+        margin-left: 10px;
+
+    }
+
+    #view_selection a {
+        color: black;
+        width: 300px;
+        font-weight: 300;
+        padding: 15px;
+        border-radius: 4px;
+        background: rgba(128, 128, 128, 0.08);
+        min-height: 50px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    #view_selection a.active {
+        font-weight: 700;
+        background: rgba(128, 128, 128, 0.15);
+    }
+
+
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+    p.help-text-1,
+    p.help-text-2 {
+        font-weight: 100;
+
+    }
+
+    p.help-text-2 {
+        font-size: 11px;
+        margin-top: 15px;
+        margin-bottom: 8px;
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div id="view_selection" class="btn-group">
+                    <a href="#" id="all" class="btn active">All Major Schemes</a>
+                    <a href="#" id="scheme-dist" class="btn">Types of Schemes</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="row text-center">
+                    <div id="vis">
+                        <div class="text-overlays">
+                            <div class="text-overlay-grp">
+                                <div class="text-content-title">Outlay on Major Schemes </div>
+                                <div class="text-content-description"> Scheme expenditure forms a sizeable proportion of the total expenditure of the Central Government and is segregated into two categories, the Centrally Sponsored Schemes (CSS) and the Central Sector Schemes. We have considered 83 schemes in total in this section comprising of the Core of the Core and the Core Schemes which makes up the Centrally Sponsored Schemes and the major Central Sector Schemes. </div>
+                            </div>
+                            <div class="text-overlay-dist">
+                                <div class="text-content overlay-1">
+                                    <div class="text-content-title">Core of the Core Schemes</div>
+                                    <div class="text-content-description">These are part of the Centrally Sponsored Schemes based on social protection and social inclusion and entail fund sharing between the Union and the States. </div>
+                                </div>
+                                <div class="text-content overlay-2">
+                                    <div class="text-content-title">Core Schemes</div>
+                                    <div class="text-content-description">These schemes comprise a bulk of the Centrally Sponsored Schemes and entail mandatory fund sharing and implementation by the states. </div>
+                                </div>
+                                <div class="text-content overlay-3">
+                                    <div class="text-content-title">Major Central Sector Schemes</div>
+                                    <div class="text-content-description">These are schemes on subjects in the Union List of the Constitution and are fully funded by the Union Government and implemented by the same. </div>
+                                </div>
+                            </div>
+                            <div class="text-overlay-key">
+                                <div id="obi-colorKey">
+                                    <p class="help-text-1">Colour represents increase and cut in allocation in comparison with 20-2020</p>
+                                    <ul class="obi-colorSwatches">
+                                        <li class="change-decrease3"></li>
+                                        <li class="change-decrease2"></li>
+                                        <li class="change-decrease1"></li>
+                                        <li class="change-increase1"></li>
+                                        <li class="change-increase2"></li>
+                                        <li class="change-increase3"></li>
+                                    </ul>
+                                    <ul class="obi-colorTicks">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                    <ul class="obi-colorLabels">
+                                        <li>&ndash;25%</li>
+                                        <li>&ndash;10%</li>
+                                        <li>0</li>
+                                        <li>+10%</li>
+                                        <li>+25%</li>
+                                    </ul>
+                                    <p class="help-text-2">The size of the bubble represents the amount of allocations relative to other departments/ministry. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="vis-svg-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" src="CustomTooltip.js">
+    </script>
+    <script type="text/javascript">
+    var custom_bubble_chart = (function(d3, CustomTooltip) {
+        "use strict";
+
+        var width = 870,
+            height = 510,
+            tooltip = CustomTooltip("obi_tooltip", 240),
+            layout_gravity = -0.01,
+            selected_year = "Budget Estimates 2021-2022",
+            previous_year = "Budget Estimates 2020-2021",
+            damper = 0.1,
+            nodes = [],
+            totalValue = 2300000,
+            defaultGravity = 0.1,
+            vis, force, circles, radius_scale;
+
+        var center = { x: width * 6 / 10, y: height * 5 / 10 },
+            year_centers = {
+                "Core of the Core Schemes": {
+                    x: width * 5.5 / 10,
+                    y: height * 4 / 10
+                },
+                "Core Schemes": {
+                    x: width * 4.5 / 10,
+                    y: height * 4 / 10
+                },
+                "Major Central Sector Schemes": {
+                    x: width * 5 / 10,
+                    y: height * 6.5 / 10
+                }
+            }
+
+
+        var fillColor = d3.scale.ordinal().domain([-3, -2, -1, 0, 1, 2, 3]).range(['#d73027', '#f46d43', '#fdae61', '#e1e2dd', '#abd9e9', '#74add1', '#4575b4'])
+
+        function categorizeChange(c) {
+
+            if (isNaN(c)) {
+                return 0;
+            }else if(c == 0){
+                return 1; 
+            } else if (c < -0.25) {
+                return -3;
+            } else if (c < -0.10) {
+                return -2;
+            } else if (c < -0.001) {
+                return -1;
+            } else if (c <= 0.001) {
+                return -1;
+            } else if (c <= 0.10) {
+                return 1;
+            } else if (c <= 0.25) {
+                return 2;
+            } else { return 3; }
+        }
+
+        function custom_chart(data) {
+
+            //var grand_total = data.pop()
+            var max_amount = d3.max(data, function(d) { return parseInt(d[selected_year], 10); });
+
+            radius_scale = d3.scale.pow().exponent(0.5).domain([0, max_amount]).range([2, 36]);
+
+
+
+            //create node objects from original data
+            //that will serve as the data behind each
+            //bubble in the vis, then add each node
+            //to nodes to be used later
+            data.forEach(function(d) {
+
+                var node = {
+                    id: d["Scheme Name"],
+                    radius: radius_scale(parseInt(d[selected_year], 12)),
+                    value: +d[selected_year],
+                    type: d["Scheme Type"],
+                    previous_value: d[previous_year],
+                    percent_change: ((d[selected_year] - d[previous_year]) / d[previous_year] * 100),
+                    change: categorizeChange((d[selected_year] - d[previous_year]) / d[previous_year]),
+
+                };
+
+                nodes.push(node);
+            });
+
+
+            nodes.sort(function(a, b) { return b.value - a.value; });
+
+            vis = d3.select("#vis-svg-container").append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .attr("id", "svg_vis");
+
+            circles = vis.selectAll("circle")
+                .data(nodes, function(d) { return d.id; });
+
+            var color = d3.scale.category20();
+            circles.enter().append("circle")
+                .attr("r", 0)
+                .attr("fill", function(d, i) { return fillColor(d.change); })
+                .attr("stroke-width", 1)
+                .attr("stroke", function(d) { return /*strokeColor(d.change)*/ "grey" })
+                .attr("id", function(d) { return "bubble_" + d.id; })
+                .on("mouseover", function(d, i) { show_details(d, i, this); })
+                .on("mouseout", function(d, i) { hide_details(d, i, this); });
+
+            circles.transition().duration(2000).attr("r", function(d) { return d.radius; });
+
+
+        }
+
+        function charge(d) {
+            if (d.value < 0) {
+                return 0
+            } else {
+                return -Math.pow(d.radius, 2.0) / 8
+            };
+
+        }
+
+        function start() {
+            force = d3.layout.force()
+                .nodes(nodes)
+                .size([width, height]);
+        }
+
+        function display_group_all() {
+            set_overlays("grp")
+
+            force.gravity(layout_gravity)
+                .charge(charge)
+                .friction(0.9)
+                .on("tick", function(e) {
+                    circles.each(move_towards_center(e.alpha))
+                        .each(buoyancy(e.alpha))
+                        .attr("cx", function(d) { return d.x; })
+                        .attr("cy", function(d) { return d.y; });
+                });
+            force.start();
+        }
+
+
+        function buoyancy(alpha) {
+            var that = this;
+            var boundingRadius = radius_scale(totalValue);
+            return function(d) {
+                var targetY = center.y - (d.change / 3) * boundingRadius
+                d.y = d.y + (targetY - d.y) * (defaultGravity) * alpha * alpha * alpha * 100
+            };
+        }
+
+        function move_towards_center(alpha) {
+            return function(d) {
+                d.x = d.x + (center.x - d.x) * (damper + 0.02) * alpha;
+                d.y = d.y + (center.y - d.y) * (damper + 0.02) * alpha;
+            };
+        }
+
+        function set_overlays(mode) {
+
+            if (mode == "grp") {
+                d3.select(".text-overlay-grp").style("display", "").style("color", "white").transition().style("color", "black").duration(1000)
+                d3.select(".text-overlay-dist").style("display", "none")
+            } else {
+                d3.select(".text-overlay-grp").style("display", "none")
+                d3.select(".text-overlay-dist").style("display", "").style("color", "white").transition().style("color", "black").duration(1000)
+            }
+
+        }
+
+        function display_distribution() {
+            set_overlays("dist")
+            force
+                .charge(charge)
+                .friction(0.9)
+                .on("tick", function(e) {
+                    circles.each(distribute_sections(e.alpha))
+                        .each(buoyancy(e.alpha))
+                        .attr("cx", function(d) { return d.x; })
+                        .attr("cy", function(d) { return d.y; });
+                });
+            force.start();
+
+        }
+
+        function distribute_sections(alpha) {
+            return function(d) {
+                var target = year_centers[d.type];
+
+                d.y = d.y + (target.y - d.y) * (defaultGravity) * alpha * 1.1
+                d.x = d.x + (target.x - d.x) * (defaultGravity) * alpha * 1.1
+            };
+        }
+
+        var formatComma = d3.format(",")
+
+        function show_details(data, i, element) {
+
+            d3.select(element).attr("stroke-width", 3).attr("z-index", 10000).attr("stroke", "black");
+            var content = "<span class='dept-name'>  " + data.id + "  </span><hr class='tooltip-hr' />";
+            content += "<span class='tooltipcurrent-year'> <span class=\"value\">  &#8377; " + formatComma(data.value) + " Cr.</span></span>";
+            var percent_class = isNaN(data.percent_change)? 'na' : (data.percent_change >= 0 ? 'positive ' : 'negative')
+            
+            content += "<span id='tooltip-percent' class=" + percent_class + ">" +  (isNaN(data.percent_change) ? "N.A.": (data.percent_change.toFixed(2) < 0 ? -1 * data.percent_change.toFixed(2) : data.percent_change.toFixed(2)) + " %" ) + "</span>";
+            tooltip.showTooltip(content, d3.event);
+        }
+
+        function hide_details(data, i, element) {
+            d3.select(element).attr("stroke-width", 1)
+                .attr("z-index", 1000)
+                .attr("stroke", function(d) { return "grey" });
+            tooltip.hideTooltip();
+        }
+
+        var my_mod = {};
+        my_mod.init = function(_data) {
+            custom_chart(_data);
+            start();
+        };
+
+        my_mod.display_all = display_group_all;
+        my_mod.toggle_view = function(view_type) {
+            if (view_type == 'scheme-dist') {
+                display_distribution();
+            } else {
+                display_group_all();
+            }
+        };
+
+        return my_mod;
+    })(d3, CustomTooltip);
+
+    d3.csv("data.csv", function(data) {
+
+        custom_bubble_chart.init(data);
+        custom_bubble_chart.toggle_view('all');
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(document).ready(function() {
+            $('#view_selection a').click(function() {
+                var view_type = $(this).attr('id');
+                $('#view_selection a').removeClass('active');
+                $(this).toggleClass('active');
+                custom_bubble_chart.toggle_view(view_type);
+                return false;
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
